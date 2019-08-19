@@ -14,7 +14,6 @@ server.use(express.json());
 
 const users = ["Tiesco", "Giovanni", "Pedro"];
 
-//Rota usada para requisições e tempo de resposta
 server.use((req, res, next) => {
 	console.time("Request");
 	console.log(`Método: ${req.method}; URL: ${req.url}`);
@@ -24,7 +23,6 @@ server.use((req, res, next) => {
 	console.timeEnd("Request");
 });
 
-//Função que verifica se o usuário tem um nome válido
 function checkUserExist(req, res, next) {
 	if (!req.body.name) {
 		return res.status(400).json({ error: "Username is required" });
@@ -33,7 +31,6 @@ function checkUserExist(req, res, next) {
 	return next();
 }
 
-//Função que verifica se um usuário ja existe
 function checkUserInArray(req, res, next) {
 	const user = users[req.params.index];
 	if (!user) {
@@ -60,7 +57,6 @@ server.post("/users", checkUserExist, (req, res) => {
 	return res.json(users);
 });
 
-// rota que edita usuário
 server.put("/users/:index", checkUserInArray, checkUserExist, (req, res) => {
 	const { index } = req.params;
 	const { name } = req.body;
@@ -70,7 +66,6 @@ server.put("/users/:index", checkUserInArray, checkUserExist, (req, res) => {
 	return res.json(users);
 });
 
-//rota que deleta usuário
 server.delete("/users/:index", checkUserInArray, (req, res) => {
 	const { index } = req.params;
 
