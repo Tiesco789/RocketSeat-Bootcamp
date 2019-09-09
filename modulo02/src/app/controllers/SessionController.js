@@ -1,6 +1,9 @@
 import jwt from 'jsonwebtoken';
+<<<<<<< Updated upstream
 import * as Yup from 'yup';
 
+=======
+>>>>>>> Stashed changes
 import User from '../models/user';
 import authConfig from '../../config/auth';
 
