@@ -123,6 +123,9 @@ class UserController {
 		});
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -131,6 +134,7 @@ class UserController {
 		}
 
 		const { email, oldPassword } = req.body;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
 		const user = await User.findByPk(req.userId);
@@ -168,6 +172,14 @@ class UserController {
 			const userExist = await User.findOne({ where: { email } });
 
 >>>>>>> Stashed changes
+=======
+
+		const user = await User.findByPk(req.userId);
+
+		if (email !== user.email) {
+			const userExist = await User.findOne({ where: { email } });
+
+>>>>>>> Stashed changes
 			if (userExist) {
 				return res.status(400).json({ error: 'User already exists' });
 			}
@@ -175,6 +187,9 @@ class UserController {
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
