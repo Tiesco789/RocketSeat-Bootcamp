@@ -121,6 +121,7 @@ class UserController {
 					oldPassword ? field.required() : field
 				),
 		});
+<<<<<<< Updated upstream
 
 		if (!(await schema.isValid(req.body))) {
 			return res.status(400).json({ error: 'Validation fails' });
@@ -141,11 +142,28 @@ class UserController {
 
 =======
 
+=======
+
+		if (!(await schema.isValid(req.body))) {
+			return res.status(400).json({ error: 'Validation fails' });
+		}
+
+		const { email, oldPassword } = req.body;
+
+		const user = await User.findByPk(req.userId);
+
+		if (email !== user.email) {
+			const userExist = await User.findOne({ where: { email } });
+
+>>>>>>> Stashed changes
 			if (userExist) {
 				return res.status(400).json({ error: 'User already exists' });
 			}
 		}
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		if (oldPassword && !(await user.checkPassword(oldPassword))) {
 			return res.status(401).json({ error: 'Password does not match' });

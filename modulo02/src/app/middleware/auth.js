@@ -6,7 +6,11 @@ import authConfig from '../../config/auth';
 export default async (req, res, next) => {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   const authHeader = req.headers.authorization;
+=======
+	const authHeader = req.headers.authorization;
+>>>>>>> Stashed changes
 =======
 	const authHeader = req.headers.authorization;
 >>>>>>> Stashed changes
