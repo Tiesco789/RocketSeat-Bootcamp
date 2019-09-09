@@ -132,12 +132,21 @@ class UserController {
 
 		if (email !== user.email) {
 			const userExist = await User.findOne({ where: { email } });
+<<<<<<< Updated upstream
 
 			if (userExist) {
 				return res.status(400).json({ error: 'User already exists' });
 			}
 		}
 
+=======
+
+			if (userExist) {
+				return res.status(400).json({ error: 'User already exists' });
+			}
+		}
+
+>>>>>>> Stashed changes
 		if (oldPassword && !(await user.checkPassword(oldPassword))) {
 			return res.status(401).json({ error: 'Password does not match' });
 		}
