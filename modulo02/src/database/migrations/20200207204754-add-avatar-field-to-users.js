@@ -7,7 +7,7 @@ module.exports = {
       refrences: { model: 'files', key: 'id' },
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
-      allowNukk: true,
+      allowNull: true,
     });
   },
 
