@@ -1,6 +1,9 @@
 package com.modulo06;
 
 import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
+import com.swansion.gesturehandler.react.RNGestureHandlerEnableRootView;
 
 public class MainActivity extends ReactActivity {
 
